@@ -1,0 +1,26 @@
+.content {
+    grid-area: c;
+    background-color: cornflowerblue;
+
+}
+.content img{
+    width: 800px;
+}
+.item{
+    color: white;
+    margin-left: 100px;
+    margin-bottom: 30px;
+}
+.input{
+    width: 800px;
+    height: 80px;
+    resize: none;
+    background-color: darkcyan;
+}
+.button{
+    width: 70px;
+    height: 20px;
+    margin-left: 735px;
+    background-color:brown;
+    border-radius: 30%;
+}
