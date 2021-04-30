@@ -1,8 +1,25 @@
 .content {
     grid-area: c;
     background-color: cornflowerblue;
+    display: grid;
+    grid-template-areas:
+    "background"
+    "info"
+    "newPost"
+    "input";
 
 }
+
+.background{
+    grid-area: background;
+}
+.info{
+    grid-area: info;
+}
+.newPost{
+    grid-area: newPost;
+}
+
 .content img{
     width: 800px;
 }
@@ -12,6 +29,7 @@
     margin-bottom: 30px;
 }
 .input{
+    grid-area: input;
     width: 800px;
     height: 80px;
     resize: none;

@@ -1,0 +1,16 @@
+.content {
+    grid-area: c;
+    background-color: cornflowerblue;
+    display: grid;
+    grid-template-areas:
+    "background"
+    "info"
+    "newPost"
+    "input";
+
+}
+
+.background{
+    grid-area: background;
+    width: 800px;
+}
