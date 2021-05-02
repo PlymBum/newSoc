@@ -1,0 +1,22 @@
+.content {
+    display: grid;
+    grid-template-columns: 2fr 6fr 4fr;
+    column-gap: 5px;
+}
+
+.dialogs {
+    margin: 0 auto;
+}
+
+.messenges {
+    margin: 10px;
+    width: 600px;
+
+    font-size: 18px;
+}
+
+.itemUser {
+    margin: 5px;
+    color: royalblue;
+    font-size: 18px;
+}

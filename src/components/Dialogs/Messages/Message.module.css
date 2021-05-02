@@ -1,0 +1,14 @@
+
+.messenges {
+    margin: 10px;
+    width: 600px;
+
+    font-size: 18px;
+}
+
+
+.itemMessage {
+    text-align: end;
+    margin-right: 30px;
+    margin-top: 15px;
+}
