@@ -1,20 +1,16 @@
 import React from "react";
-import styles from "./MyPosts.module.css"
+import styles from "./Post.module.css"
 
-const MyPosts = () => {
+const Post = (props) => {
     return (
         <div>
             <div className={styles.item}>
-                Hello. I`m using this
-            </div>
-            <div className={styles.item}>
-                New round
-            </div>
-            <div className={styles.item}>
-                My first post
+                <img src='https://vjoy.cc/wp-content/uploads/2020/11/1572690290_4.jpg'/>
+               <span>{props.message}</span>
+                <div>like {props.likes}</div>
             </div>
         </div>
     )
 }
 
-export default MyPosts;
+export default Post;

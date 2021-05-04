@@ -1,34 +1,14 @@
 import React from "react";
-import styles from "./Profile.module.css"
+import Post from "./Posts/Post";
 
-const Profile = () => {
+const MyPosts = () => {
     return (
-        <div className={styles.content}>
-            <img className={styles.background}
-                src="https://global-uploads.webflow.com/5ef5480befd392489dacf544/5f9f5e5943de7e69a1339242_5f44a7398c0cdf460857e744_img-image.jpeg"/>
-            <div className={styles.info}>
-                ava+description
-            </div>
-            <div className={styles.newPost}>
-                <div>My posts</div>
-                <div><textarea className={styles.input}></textarea></div>
-                <button className={styles.button}>Send</button>
-
-            </div>
-            <div>
-
-                <div className={styles.item}>
-                    Hello. I`m using this
-                </div>
-                <div className={styles.item}>
-                    New round
-                </div>
-                <div className={styles.item}>
-                    My first post
-                </div>
-            </div>
+        <div>
+            <Post message='Hello, its my first props' likes='15'/>
+            <Post message='I like this' likes='20'/>
         </div>
+
     )
 }
 
-export default Profile;
+export default MyPosts;

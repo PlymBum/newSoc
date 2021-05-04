@@ -1,44 +1,10 @@
-.content {
-    grid-area: c;
-    background-color: cornflowerblue;
-    display: grid;
-    grid-template-areas:
-    "background"
-    "info"
-    "newPost"
-    "input";
-
-}
-
-.background{
-    grid-area: background;
-}
-.info{
-    grid-area: info;
-}
-.newPost{
-    grid-area: newPost;
-}
-
-.content img{
-    width: 800px;
-}
 .item{
     color: white;
-    margin-left: 100px;
+    margin-left: 20px;
     margin-bottom: 30px;
 }
-.input{
-    grid-area: input;
-    width: 800px;
-    height: 80px;
-    resize: none;
-    background-color: darkcyan;
-}
-.button{
-    width: 70px;
-    height: 20px;
-    margin-left: 735px;
-    background-color:brown;
-    border-radius: 30%;
+.item img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
 }

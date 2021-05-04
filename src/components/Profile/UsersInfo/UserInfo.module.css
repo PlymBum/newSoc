@@ -1,16 +1,14 @@
-.content {
-    grid-area: c;
-    background-color: cornflowerblue;
+.info {
     display: grid;
-    grid-template-areas:
-    "background"
-    "info"
-    "newPost"
-    "input";
+    grid-template-columns: 2fr 10fr;
+    align-items: start;
+    margin-bottom: 5px;
 
 }
 
-.background{
-    grid-area: background;
-    width: 800px;
+.info img {
+    margin-left: 15px;
+    border-radius: 50%;
+    width: 150px;
+    margin-top: 5px;
 }

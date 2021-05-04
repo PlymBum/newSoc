@@ -5,12 +5,20 @@
     grid-template-areas:
     "h h"
     "n c";
-    grid-template-rows: 60px 1fr;
-    grid-template-columns: 2fr 10fr;
+    grid-template-rows: 70px 1fr;
+    grid-template-columns: 170px auto;
     grid-gap: 3px;
+}
+*:focus {
+    outline: none;
 }
 
 
+.app-wrapper-content {
+    grid-area: c;
+    background-color: #A9A9A9;
+
+}
 
 
 
