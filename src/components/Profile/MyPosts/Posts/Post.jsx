@@ -5,9 +5,9 @@ const Post = (props) => {
     return (
         <div>
             <div className={styles.item}>
-                <img src='https://vjoy.cc/wp-content/uploads/2020/11/1572690290_4.jpg'/>
+                <img src={props.avatar}/>
                <span>{props.message}</span>
-                <div>like {props.likes}</div>
+                <div>like {props.likesCount}</div>
             </div>
         </div>
     )
