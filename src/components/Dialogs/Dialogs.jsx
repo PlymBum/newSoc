@@ -5,33 +5,31 @@ import User from "./Users/User";
 
 const Dialogs = (props) => {
 
-    let dialogData = [
+/*    let dialogs = [
         {id: 1, name: 'John'},
         {id: 2, name: 'Jim'},
         {id: 3, name: 'Joan'},
         {id: 4, name: 'Jessie'}
     ]
 
-    let messagesData = [
+    let messages = [
         {id: 1, message: 'Hello'},
         {id: 2, message: 'How are you?'},
         {id: 3, message: 'Good day'},
         {id: 4, message: 'Yo'}
-    ]
+    ]*/
+
+    let dialogsItem=props.state.dialogs.map(dialog=><User name={dialog.name} id={dialog.id}/>)
+    let messagesItem=props.state.messages.map(message=><Message message={message.message}/>)
+
 
     return (
         <div className={styles.content}>
             <div className={styles.dialogs}>
-                <User name={dialogData[0].name} id={dialogData[0].id}/>
-                <User name={dialogData[1].name} id={dialogData[1].id}/>
-                <User name={dialogData[2].name} id={dialogData[2].id}/>
-                <User name={dialogData[3].name} id={dialogData[3].id}/>
+                {dialogsItem}
             </div>
             <div className={styles.messenges}>
-                <Message message={messagesData[0].message}/>
-                <Message message={messagesData[1].message}/>
-                <Message message={messagesData[2].message}/>
-                <Message message={messagesData[3].message}/>
+                {messagesItem}
             </div>
 
         </div>
