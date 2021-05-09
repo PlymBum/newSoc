@@ -1,3 +1,5 @@
+import {rerenderEntireTree} from "../rerender";
+
 let state = {
     profilePage: {
         posts: [
@@ -73,6 +75,29 @@ let state = {
             }
         ]
     }
+}
+
+export let addPost=(postMessage)=>{
+
+    let newPost={
+        id:4,
+        massage:postMessage,
+        likesCount: 200,
+        avatar:'https://ava-24.com/_ph/146/479768406.jpg'
+    }
+    state.profilePage.posts.push(newPost)
+    rerenderEntireTree(state)
+}
+
+export let sendMessage=(message)=>{
+    let newMessage={
+        id: 5,
+        message: message,
+        avatar: "https://ava-24.com/_ph/146/479768406.jpg",
+        className: 'output'
+    }
+    state.dialogPage.messages.push(newMessage)
+    rerenderEntireTree(state)
 }
 
 export default state;

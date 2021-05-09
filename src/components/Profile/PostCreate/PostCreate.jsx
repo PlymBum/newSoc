@@ -1,11 +1,13 @@
 import React from "react";
 import styles from "./PostCreate.module.css"
 
-const PostCreate = () => {
+const PostCreate = (props) => {
     let newPostElement=React.createRef()
     let addPost=()=>{
+
         let text=newPostElement.current.value
-        alert(text)
+        props.addPost(text)
+        newPostElement.current.value=""
     }
 
     return (

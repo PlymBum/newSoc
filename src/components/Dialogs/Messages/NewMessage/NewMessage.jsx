@@ -1,11 +1,12 @@
 import React from "react";
 import styles from "./NewMessage.module.css"
 
-const NewMessage = () => {
+const NewMessage = (props) => {
     let newMessageElement=React.createRef()
     let sendMessage=()=>{
         let text=newMessageElement.current.value
-        alert(text)
+        props.sendMessage(text)
+        newMessageElement.current.value=''
     }
 
     return (

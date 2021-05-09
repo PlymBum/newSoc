@@ -34,7 +34,7 @@ const Dialogs = (props) => {
                 {messagesItem}
             </div>
             <div className={styles.newMessage}>
-                <NewMessage />
+                <NewMessage sendMessage={props.sendMessage}/>
 
             </div>
 

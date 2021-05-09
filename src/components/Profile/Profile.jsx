@@ -5,13 +5,13 @@ import UserInfo from "./UsersInfo/UserInfo";
 import PostCreate from "./PostCreate/PostCreate";
 
 const Profile = (props) => {
-    debugger
+
         return (
 
         <div className={styles.content}>
             <UserInfo/>
-            <PostCreate/>
-            <MyPosts posts={props.profile.posts}/>
+            <PostCreate addPost={props.addPost}/>
+            <MyPosts posts={props.profile.posts} />
         </div>
     )
 }
