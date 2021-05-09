@@ -4,10 +4,8 @@ import styles from "./PostCreate.module.css"
 
 const PostCreate = (props) => {
     let newPostElement = React.createRef()
-    let addPost = () => {
-        props.addPost()
+    let addPost = () => props.addPost()
 
-    }
 
     let onPostChange = () => {
         let text = newPostElement.current.value
@@ -18,7 +16,8 @@ const PostCreate = (props) => {
         <div>
             <div>
                 <textarea ref={newPostElement} className={styles.input}
-                          onChange={onPostChange} value={props.newPostText}></textarea>
+                          onChange={onPostChange}
+                          value={props.newPostText}></textarea>
             </div>
             <button onClick={addPost} className={styles.button}>Send</button>
         </div>

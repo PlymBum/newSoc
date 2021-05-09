@@ -7,8 +7,8 @@ import {addPost,sendMessage, updatePostText,updateMessageText} from './redux/sta
 export let rerenderEntireTree=(state)=>{
     ReactDOM.render(
         <React.StrictMode>
-            <App state={state} a
-                 ddPost={addPost}
+            <App state={state}
+                 addPost={addPost}
                  sendMessage={sendMessage}
                  updatePostText={updatePostText}
                  updateMessageText={updateMessageText}/>
