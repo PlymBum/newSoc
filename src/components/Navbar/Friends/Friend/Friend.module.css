@@ -1,0 +1,16 @@
+.item{
+    margin-top: 50px;
+    color: black;
+    margin-left: 20px;
+    margin-bottom: 30px;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 2fr 2fr 2fr;
+
+
+}
+.item img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}

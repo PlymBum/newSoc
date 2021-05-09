@@ -9,12 +9,13 @@ import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
 
 function App(props) {
-    debugger
+
     return (
         <BrowserRouter>
             <div className='app-wrapper'>
                 <Header/>
-                <Navbar/>
+                <Navbar friends={props.state.friendsList}/>
+
                 <div className='app-wrapper-content'>
                     {/*  <Route path='/profile' component={Profile}/>*/}
                     {/* <Route path='/dialogs' component={Dialogs}/>

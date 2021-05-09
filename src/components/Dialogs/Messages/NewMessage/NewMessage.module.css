@@ -1,0 +1,28 @@
+.input {
+    grid-area: input;
+    width: 800px;
+    height: 80px;
+    resize: none;
+    background-color: #fff;
+    /*margin-top: 5px;*/
+    margin-left: 15px;
+    border-radius: 10px;
+
+}
+
+.button {
+    margin-left: 725px;
+    background-color: royalblue;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.button:hover {
+    box-shadow: 0 0 3px blue;
+}

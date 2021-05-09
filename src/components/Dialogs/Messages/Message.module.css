@@ -1,14 +1,39 @@
 
-.messenges {
+.messages {
     margin: 10px;
     width: 600px;
-
     font-size: 18px;
+
+}
+.input img{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin: 5px;
+
+}
+.output img{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin: 5px;
 }
 
 
-.itemMessage {
+/*.itemMessage {
     text-align: end;
     margin-right: 30px;
     margin-top: 15px;
+}*/
+.input{
+    text-align: end;
+
+    vertical-align: center;
+    background-color: antiquewhite;
+}
+
+.output{
+    background-color: azure;
+    text-align: start;
+
 }

@@ -1,11 +1,25 @@
 .content {
     display: grid;
-    grid-template-columns: 2fr 6fr 4fr;
+    grid-template-columns: 2fr 10fr;
+    grid-template-rows: auto 5fr;
+    grid-template-areas:
+    "dialogs messages"
+    "newMessage newMessage";
     column-gap: 5px;
 }
 
 .dialogs {
-    margin: 0 auto;
+    /*margin: 0 auto;*/
+    grid-area: dialogs;
+
+}
+.messages{
+    grid-area: messages;
+
+}
+.newMessage{
+    margin-top: 25px;
+    grid-area: newMessage;
 }
 
 

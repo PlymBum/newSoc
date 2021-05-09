@@ -6,8 +6,10 @@
     "h h"
     "n c";
     grid-template-rows: 70px 1fr;
-    grid-template-columns: 170px auto;
+    grid-template-columns: 250px auto;
+    background-color: #9CABB1;
     grid-gap: 3px;
+
 }
 *:focus {
     outline: none;
@@ -16,7 +18,7 @@
 
 .app-wrapper-content {
     grid-area: c;
-    background-color: #414761;
+
 
 }
 
