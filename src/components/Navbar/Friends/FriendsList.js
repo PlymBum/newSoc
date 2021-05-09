@@ -7,7 +7,7 @@ let FriendsList=(props)=>{
 
 
     let friendsItem=props.friendsList.map(friend=><Friend name={friend.name} avatar={friend.avatar} />)
-    console.log(friendsItem)
+
 
 
     return (

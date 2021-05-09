@@ -21,7 +21,8 @@ let state = {
                 likesCount: 200,
                 avatar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTz0cES6k3m6U56piR3v2i9mm9G9Em0-kLhpg&usqp=CAU"
             }
-        ]
+        ],
+        newPostText:''
     },
     dialogPage: {
         dialogs: [
@@ -77,15 +78,22 @@ let state = {
     }
 }
 
-export let addPost=(postMessage)=>{
+export let addPost=()=>{
 
     let newPost={
-        id:4,
-        massage:postMessage,
+        id: 3,
+        message: state.profilePage.newPostText,
         likesCount: 200,
-        avatar:'https://ava-24.com/_ph/146/479768406.jpg'
+        avatar: "https://ava-24.com/_ph/146/479768406.jpg"
     }
     state.profilePage.posts.push(newPost)
+    state.profilePage.newPostText=''
+    rerenderEntireTree(state)
+
+}
+
+export let updatePostText=(newText)=>{
+    state.profilePage.newPostText=newText
     rerenderEntireTree(state)
 }
 

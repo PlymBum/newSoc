@@ -4,7 +4,7 @@ import reportWebVitals from './reportWebVitals';
 import state from './redux/state'
 import {rerenderEntireTree} from "./rerender";
 
-
+window.state=state
 rerenderEntireTree(state)
 
 
