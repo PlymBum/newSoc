@@ -7,16 +7,17 @@ import App from './App';
 import store from "./redux/state";
 
 
-window.state=state
+window.state = state
 
-let rerenderEntireTree=(state)=>{
+let rerenderEntireTree = (state) => {
     ReactDOM.render(
         <React.StrictMode>
             <App state={state}
-                 addPost={store.addPost.bind(store)}
-                 sendMessage={store.sendMessage.bind(store)}
-                 updatePostText={store.updatePostText.bind(store)}
-                 updateMessageText={store.updateMessageText.bind(store)}/>
+                 dispatch={store.dispatch.bind(store)}
+                /*addPost={store.addPost.bind(store)}
+                sendMessage={store.sendMessage.bind(store)}
+                updatePostText={store.updatePostText.bind(store)}
+                updateMessageText={store.updateMessageText.bind(store)}*//>
         </React.StrictMode>,
         document.getElementById('root')
     );

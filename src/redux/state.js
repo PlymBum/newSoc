@@ -1,5 +1,5 @@
-let store={
-    _state : {
+let store = {
+    _state: {
         profilePage: {
             posts: [
                 {
@@ -21,7 +21,7 @@ let store={
                     avatar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTz0cES6k3m6U56piR3v2i9mm9G9Em0-kLhpg&usqp=CAU"
                 }
             ],
-            newPostText:''
+            newPostText: ''
         },
         dialogPage: {
             dialogs: [
@@ -55,7 +55,7 @@ let store={
                     className: 'output'
                 }
             ],
-            newMessageText:''
+            newMessageText: ''
         },
         friendsList: {
             friendItem: [
@@ -77,48 +77,48 @@ let store={
             ]
         }
     },
+    _callSubscriber() {
+        console.log('no subscriber')
+    },
+
     getState() {
         return this._state;
     },
-    _callSubscriber (){
-        console.log('no subscriber')
+    subscribe(observer) {
+        this._callSubscriber = observer
     },
-    addPost(){
 
-        let newPost={
-            id: 3,
-            message: this._state.profilePage.newPostText,
-            likesCount: 200,
-            avatar: "https://ava-24.com/_ph/146/479768406.jpg"
+    dispatch(action) {
+        if (action.type === "ADD-POST") {
+            let newPost = {
+                id: 3,
+                message: this._state.profilePage.newPostText,
+                likesCount: 200,
+                avatar: "https://ava-24.com/_ph/146/479768406.jpg"
+            }
+            this._state.profilePage.posts.push(newPost)
+            this._state.profilePage.newPostText = ''
+            this._callSubscriber(this._state)
         }
-        this._state.profilePage.posts.push(newPost)
-        this._state.profilePage.newPostText=''
-        this._callSubscriber(this._state)
-
-    },
-    updatePostText(newText){
-        this._state.profilePage.newPostText=newText
-        this._callSubscriber(this._state)
-    },
-    sendMessage(message){
-        let newMessage={
-            id: 5,
-            message: this._state.dialogPage.newMessageText,
-            avatar: "https://ava-24.com/_ph/146/479768406.jpg",
-            className: 'output'
+        else if (action.type === "UPDATE-POST-TEXT") {
+            this._state.profilePage.newPostText = action.newText
+            this._callSubscriber(this._state)
         }
-        this._state.dialogPage.messages.push(newMessage)
-        this._state.dialogPage.newMessageText=''
-        this._callSubscriber(this._state)
-    },
-    updateMessageText(newText){
-        this._state.dialogPage.newMessageText=newText
-        this._callSubscriber(this._state)
-    },
-    subscribe (observer){
-        this._callSubscriber=observer
+        else if (action.type === "SEND-MESSAGE") {
+            let newMessage = {
+                id: 5,
+                message: this._state.dialogPage.newMessageText,
+                avatar: "https://ava-24.com/_ph/146/479768406.jpg",
+                className: 'output'
+            }
+            this._state.dialogPage.messages.push(newMessage)
+            this._state.dialogPage.newMessageText = ''
+            this._callSubscriber(this._state)
+        }
+        else if (action.type === "UPDATE-MESSAGE-TEXT") {
+            this._state.dialogPage.newMessageText = action.newText
+            this._callSubscriber(this._state)
+        }
     }
-
-
 }
 export default store;

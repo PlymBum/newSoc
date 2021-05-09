@@ -10,7 +10,6 @@ import Settings from "./components/Settings/Settings";
 import {updateMessageText, updatePostText} from "./redux/state";
 
 
-
 function App(props) {
 
     return (
@@ -20,17 +19,10 @@ function App(props) {
                 <Navbar friends={props.state.friendsList}/>
 
                 <div className='app-wrapper-content'>
-                    {/*  <Route path='/profile' component={Profile}/>*/}
-                    {/* <Route path='/dialogs' component={Dialogs}/>
-                    <Route path='/news' component={News}/>
-                    <Route path='/music' component={Music}/>
-                    <Route path='/settings' component={Settings}/>*/}
                     <Route path='/profile' render={() => <Profile profile={props.state.profilePage}
-                                                                  addPost={props.addPost}
-                                                                  updatePostText={props.updatePostText}/>}/>
+                                                                  dispatch={props.dispatch}/>}/>
                     <Route path='/dialogs' render={() => <Dialogs dialogPage={props.state.dialogPage}
-                                                                  sendMessage={props.sendMessage}
-                                                                  updateMessageText={props.updateMessageText}/>}/>
+                                                                  dispatch={props.dispatch}/>}/>
                     <Route path='/news' render={() => <News/>}/>
                     <Route path='/music' render={() => <Music/>}/>
                     <Route path='/settings' render={() => <Settings/>}/>
