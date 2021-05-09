@@ -55,7 +55,8 @@ let state = {
                 avatar: 'https://ava-24.com/_ph/146/479768406.jpg',
                 className: 'output'
             }
-        ]
+        ],
+        newMessageText:''
     },
     friendsList: {
         friendItem: [
@@ -100,11 +101,17 @@ export let updatePostText=(newText)=>{
 export let sendMessage=(message)=>{
     let newMessage={
         id: 5,
-        message: message,
+        message: state.dialogPage.newMessageText,
         avatar: "https://ava-24.com/_ph/146/479768406.jpg",
         className: 'output'
     }
     state.dialogPage.messages.push(newMessage)
+    state.dialogPage.newMessageText=''
+    rerenderEntireTree(state)
+}
+
+export let updateMessageText=(newText)=>{
+    state.dialogPage.newMessageText=newText
     rerenderEntireTree(state)
 }
 
