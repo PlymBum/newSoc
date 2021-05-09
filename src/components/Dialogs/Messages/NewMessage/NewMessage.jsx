@@ -1,15 +1,17 @@
 import React from "react";
 import styles from "./NewMessage.module.css"
+import {sendMessageActionCreator, updateMessageTextActionCreator} from "../../../../redux/state";
+
 
 const NewMessage = (props) => {
     let newMessageElement = React.createRef()
     let sendMessage = () => {
-        props.dispatch({type: "SEND-MESSAGE"})
+        props.dispatch(sendMessageActionCreator())
     }
 
     let onMessageChange = () => {
         let text = newMessageElement.current.value
-        props.dispatch({type: "UPDATE-MESSAGE-TEXT", newText: text})
+        props.dispatch(updateMessageTextActionCreator(text))
     }
 
     return (

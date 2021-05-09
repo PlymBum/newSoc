@@ -1,3 +1,10 @@
+export const addPostActionCreator=()=>({type: "ADD-POST"})
+export const updatePostTextActionCreator=(text)=>({type: "UPDATE-POST-TEXT", newText: text})
+
+export const sendMessageActionCreator = () => ({type: "SEND-MESSAGE"})
+export const updateMessageTextActionCreator = (text) => ({type: "UPDATE-MESSAGE-TEXT", newText: text})
+
+
 let store = {
     _state: {
         profilePage: {
