@@ -1,11 +1,6 @@
+/*
 import profileReducer from "./profile-reducer";
 import dialogReducer from "./dialog-reducer";
-
-/*export const addPostActionCreator=()=>({type: "ADD-POST"})
-export const updatePostTextActionCreator=(text)=>({type: "UPDATE-POST-TEXT", newText: text})*/
-
-/*export const sendMessageActionCreator = () => ({type: "SEND-MESSAGE"})
-export const updateMessageTextActionCreator = (text) => ({type: "UPDATE-MESSAGE-TEXT", newText: text})*/
 
 
 let store = {
@@ -99,43 +94,10 @@ let store = {
     },
 
     dispatch(action) {
-
-        this._state.profilePage= profileReducer(this._state.profilePage,action)
-        this._state.dialogPage= dialogReducer(this._state.dialogPage,action)
+        this._state.profilePage = profileReducer(this._state.profilePage, action)
+        this._state.dialogPage = dialogReducer(this._state.dialogPage, action)
         this._callSubscriber(this._state)
-
-
-
-        /*if (action.type === "ADD-POST") {
-            let newPost = {
-                id: 3,
-                message: this._state.profilePage.newPostText,
-                likesCount: 200,
-                avatar: "https://ava-24.com/_ph/146/479768406.jpg"
-            }
-            this._state.profilePage.posts.push(newPost)
-            this._state.profilePage.newPostText = ''
-            this._callSubscriber(this._state)
-        }
-        else if (action.type === "UPDATE-POST-TEXT") {
-            this._state.profilePage.newPostText = action.newText
-            this._callSubscriber(this._state)
-        }
-        else if (action.type === "SEND-MESSAGE") {
-            let newMessage = {
-                id: 5,
-                message: this._state.dialogPage.newMessageText,
-                avatar: "https://ava-24.com/_ph/146/479768406.jpg",
-                className: 'output'
-            }
-            this._state.dialogPage.messages.push(newMessage)
-            this._state.dialogPage.newMessageText = ''
-            this._callSubscriber(this._state)
-        }
-        else if (action.type === "UPDATE-MESSAGE-TEXT") {
-            this._state.dialogPage.newMessageText = action.newText
-            this._callSubscriber(this._state)
-        }*/
     }
 }
 export default store;
+*/

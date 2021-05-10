@@ -13,7 +13,7 @@ const PostCreate = (props) => {
         let text = newPostElement.current.value
         props.dispatch(updatePostTextActionCreator(text))
     }
-debugger
+
     return (
         <div>
             <div>

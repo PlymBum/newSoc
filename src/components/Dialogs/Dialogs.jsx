@@ -7,7 +7,7 @@ import NewMessage from "./Messages/NewMessage/NewMessage";
 
 
 const Dialogs = (props) => {
-debugger
+
     let dialogsItem = props.dialogPage.dialogs.map(dialog => <User name={dialog.name} id={dialog.id}/>)
     let messagesItem = props.dialogPage.messages.map(message => <Message message={message.message} className={message.className} avatar={message.avatar}/>)
 
