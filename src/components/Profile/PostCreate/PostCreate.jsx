@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./PostCreate.module.css"
-import {addPostActionCreator, updatePostTextActionCreator} from "../../../redux/state";
+import {addPostActionCreator, updatePostTextActionCreator} from "../../../redux/profile-reducer";
 
 
 
@@ -13,7 +13,7 @@ const PostCreate = (props) => {
         let text = newPostElement.current.value
         props.dispatch(updatePostTextActionCreator(text))
     }
-
+debugger
     return (
         <div>
             <div>

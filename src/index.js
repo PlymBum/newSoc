@@ -7,7 +7,7 @@ import App from './App';
 import store from "./redux/state";
 
 
-window.state = state
+
 
 let rerenderEntireTree = (state) => {
     ReactDOM.render(
