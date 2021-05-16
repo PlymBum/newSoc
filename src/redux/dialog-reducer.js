@@ -1,10 +1,10 @@
 export const sendMessageActionCreator = () => ({type: SEND_MESSAGE})
 export const updateMessageTextActionCreator = (text) => ({type: UPDATE_MESSAGE_TEXT, newText: text})
 
-const SEND_MESSAGE='SEND_MESSAGE'
-const UPDATE_MESSAGE_TEXT='UPDATE_MESSAGE_TEXT'
+const SEND_MESSAGE = 'SEND_MESSAGE'
+const UPDATE_MESSAGE_TEXT = 'UPDATE_MESSAGE_TEXT'
 
-let initialState= {
+let initialState = {
     dialogs: [
         {id: 1, name: 'Kastiel'},
         {id: 2, name: 'Sam'},
@@ -39,23 +39,27 @@ let initialState= {
     newMessageText: ''
 }
 
-const dialogReducer = (state=initialState, action) => {
+const dialogReducer = (state = initialState, action) => {
     switch (action.type) {
-        case SEND_MESSAGE :
+        case SEND_MESSAGE : {
             let newMessage = {
                 id: 5,
                 message: state.newMessageText,
                 avatar: "https://ava-24.com/_ph/146/479768406.jpg",
                 className: 'output'
             }
-            state.messages.push(newMessage)
-            state.newMessageText = ''
-            return state
+            return {
+                ...state,
+                newMessageText: "",
+                messages: [...state.messages,newMessage]
+            }
+        }
 
 
-        case UPDATE_MESSAGE_TEXT :
-            state.newMessageText = action.newText
-            return state
+        case UPDATE_MESSAGE_TEXT : {
+            return {...state,
+                newMessageText: action.newText}
+        }
 
         default:
             return state

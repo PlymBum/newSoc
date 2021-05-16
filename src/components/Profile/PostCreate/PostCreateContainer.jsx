@@ -4,22 +4,6 @@ import PostCreate from "./PostCreate";
 import {connect} from "react-redux";
 
 
-
-
-/*const PostCreateContainer = (props) => {
-
-    let addPost = () => props.dispatch(addPostActionCreator())
-
-
-    let onPostChange = (text) => {
-                props.dispatch(updatePostTextActionCreator(text))
-    }
-
-    return (
-        <PostCreate onPostChange={onPostChange} onAddPost={addPost} newPostText={props.newPostText}/>
-    )
-}*/
-
 let mapStateToProps=(state)=>{
     return {
         newPostText: state.profilePage.newPostText

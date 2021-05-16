@@ -1,10 +1,10 @@
-export const addPostActionCreator=()=>({type: ADD_POST})
-export const updatePostTextActionCreator=(text)=>({type: UPDATE_POST_TEXT, newText: text})
+export const addPostActionCreator = () => ({type: ADD_POST})
+export const updatePostTextActionCreator = (text) => ({type: UPDATE_POST_TEXT, newText: text})
 
-const ADD_POST="ADD_POST"
-const UPDATE_POST_TEXT="UPDATE_POST_TEXT"
+const ADD_POST = "ADD_POST"
+const UPDATE_POST_TEXT = "UPDATE_POST_TEXT"
 
-let initialState={
+let initialState = {
     posts: [
         {
             id: 1,
@@ -25,28 +25,32 @@ let initialState={
             avatar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTz0cES6k3m6U56piR3v2i9mm9G9Em0-kLhpg&usqp=CAU"
         }
     ],
-        newPostText: ''
+    newPostText: ''
 }
 
 
-const profileReducer = (state=initialState, action) => {
+const profileReducer = (state = initialState, action) => {
     switch (action.type) {
-        case  ADD_POST:
+        case  ADD_POST: {
             let newPost = {
                 id: 3,
                 message: state.newPostText,
                 likesCount: 200,
                 avatar: "https://ava-24.com/_ph/146/479768406.jpg"
             }
-            state.newPostText = ""
-            state.posts.push(newPost)
-            console.log("add " + state.newPostText)
-            return state
+            return {
+                ...state,
+                newPostText: "",
+                posts: [newPost,...state.posts]
+            }
+        }
 
-        case UPDATE_POST_TEXT:
-            state.newPostText = action.newText
-            console.log("update " + state.newPostText)
-            return state
+        case UPDATE_POST_TEXT: {
+            return {
+                ...state,
+                newPostText: action.newText
+            }
+        }
 
         default:
             return state

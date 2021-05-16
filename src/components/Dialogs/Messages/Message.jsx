@@ -5,9 +5,7 @@ const Message = (props) => {
     return (
         <div>
             <div className={styles.messages}>
-                {/* <div className={`${styles.itemMessage} ${props.className}`}>*/}
-
-                <div className={props.className == "input" ? styles.input : styles.output}>
+                <div className={props.className === "input" ? styles.input : styles.output}>
                     {props.message}
                     <div>
                         <img src={props.avatar}/>
