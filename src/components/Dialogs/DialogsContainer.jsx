@@ -1,11 +1,5 @@
 import React from "react";
-import styles from "./Dialogs.module.css"
-import Message from "./Messages/Message";
-import User from "./Users/User";
-import NewMessage from "./Messages/NewMessage/NewMessage";
-import NewMessageContainer from "./Messages/NewMessage/NewMessageContainer";
 import {connect} from "react-redux";
-import Profile from "../Profile/Profile";
 import Dialogs from "./Dialogs";
 
 const mapStateToProps = (state) => {

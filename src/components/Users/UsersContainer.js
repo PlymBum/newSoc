@@ -1,12 +1,12 @@
 import React from "react";
 import {connect} from "react-redux";
-import Profile from "./Profile";
+import Users from "./Users";
 
 
 const mapStateToProps = (state) => {
     debugger
     return {
-        posts: state.profilePage.posts
+        users: state.usersPage.users
     }
 }
 const mapDispatchToProps = (dispatch) => {
@@ -14,6 +14,6 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 
-const ProfileContainer = connect(mapStateToProps, mapDispatchToProps)(Profile)
+const UsersContainer = connect(mapStateToProps,mapDispatchToProps)(Users)
 
-export default ProfileContainer;
+export default UsersContainer
