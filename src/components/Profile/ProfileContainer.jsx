@@ -4,7 +4,6 @@ import Profile from "./Profile";
 
 
 const mapStateToProps = (state) => {
-    debugger
     return {
         posts: state.profilePage.posts
     }
