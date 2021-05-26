@@ -8,6 +8,7 @@
 .avatar {
     width: 120px;
     height: 120px;
+    border-radius: 50%;
 }
 
 .info {
@@ -43,4 +44,11 @@
     grid-area: status;
 
 
+}
+span{
+    margin-right: 5px;
+    margin-left: 5px;
+}
+.current{
+    font-weight: bold;
 }
