@@ -1,8 +1,10 @@
 export const addPostActionCreator = () => ({type: ADD_POST})
 export const updatePostTextActionCreator = (text) => ({type: UPDATE_POST_TEXT, newText: text})
+export const setUsersProfile = (profile) => ({type: SET_USERS_PROFILE, profile})
 
 const ADD_POST = "ADD_POST"
 const UPDATE_POST_TEXT = "UPDATE_POST_TEXT"
+const SET_USERS_PROFILE = "SET_USERS_PROFILE"
 
 let initialState = {
     posts: [
@@ -25,7 +27,8 @@ let initialState = {
             avatar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTz0cES6k3m6U56piR3v2i9mm9G9Em0-kLhpg&usqp=CAU"
         }
     ],
-    newPostText: ''
+    newPostText: '',
+    profile: null
 }
 
 
@@ -49,6 +52,11 @@ const profileReducer = (state = initialState, action) => {
             return {
                 ...state,
                 newPostText: action.newText
+            }
+        }
+        case SET_USERS_PROFILE:{
+            return {
+                ...state, profile: action.profile
             }
         }
 

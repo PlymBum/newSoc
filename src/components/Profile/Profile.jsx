@@ -6,13 +6,13 @@ import MyPostsContainer from "./MyPosts/MyPostsContainer";
 
 const Profile = (props) => {
     return (
-
         <div className={styles.content}>
-            <UserInfo/>
+            <UserInfo profile={props.profile} />
             <PostCreateContainer/>
             <MyPostsContainer/>
         </div>
     )
+
 }
 
 export default Profile;

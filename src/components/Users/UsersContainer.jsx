@@ -1,16 +1,8 @@
 import React from "react";
 import {connect} from "react-redux";
-import {
-    follow,
-    setCurrentPage,
-    setTotalCount,
-    setUsers,
-    toggleIsFetching,
-    unfollow
-} from "../../redux/users-reducer";
+import {follow, setCurrentPage, setTotalCount, setUsers, toggleIsFetching, unfollow} from "../../redux/users-reducer";
 import axios from "axios";
 import Users from "./Users";
-import preloader from "../../assets/preloader/preloader.svg"
 import Preloader from "../common/Preloader";
 
 
@@ -66,9 +58,8 @@ const mapStateToProps = (state) => {
 }
 
 
-
 export default connect(mapStateToProps, {
-    follow,unfollow,setUsers,setTotalCount,setCurrentPage,toggleIsFetching
+    follow, unfollow, setUsers, setTotalCount, setCurrentPage, toggleIsFetching
 })(UsersApiContainer)
 
 
