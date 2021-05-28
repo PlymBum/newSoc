@@ -8,3 +8,12 @@
     margin-top: 7px;
     width: 60px;
 }
+.authInfo{
+    float: right;
+    color: white;
+}
+
+.authInfo a{
+    text-decoration: none;
+    color: white;
+}

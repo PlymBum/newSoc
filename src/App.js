@@ -9,6 +9,7 @@ import ProfileContainer from "./components/Profile/ProfileContainer";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
 import UsersContainer from "./components/Users/UsersContainer";
 import store from "./redux/redux-store"
+import HeaderContainer from "./components/Header/HeaderContainer";
 
 window.store=store
 
@@ -16,7 +17,7 @@ function App(props) {
 
     return (
                     <div className='app-wrapper'>
-                <Header/>
+                <HeaderContainer/>
                 <Navbar />
 
                 <div className='app-wrapper-content'>
