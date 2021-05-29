@@ -11,6 +11,7 @@ let initialState = {
     totalCount:0,
     pageSize:5,
     isFetching:false
+
 }
 
 export const follow = (userId) => ({type: FOLLOW, userId})
@@ -24,6 +25,7 @@ export const toggleIsFetching = (isFetching) => ({type: TOGGLE_IS_FETCHING, isFe
 export const usersReducer = (state = initialState, action) => {
         switch (action.type) {
         case FOLLOW: {
+            debugger
             return {
                 ...state, users: state.users.map(u => {
                     if (u.id === action.userId) {

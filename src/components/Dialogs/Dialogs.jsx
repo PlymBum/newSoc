@@ -9,8 +9,8 @@ import NewMessageContainer from "./Messages/NewMessage/NewMessageContainer";
 
 const Dialogs = (props) => {
 
-    let dialogsItem = props.dialogs.map(dialog => <User name={dialog.name} id={dialog.id}/>)
-    let messagesItem = props.messages.map(message => <Message message={message.message} className={message.className} avatar={message.avatar}/>)
+    let dialogsItem = props.dialogs.map(dialog => <User key={dialog.id} name={dialog.name} id={dialog.id}/>)
+    let messagesItem = props.messages.map(message => <Message key={message.id} message={message.message} className={message.className} avatar={message.avatar}/>)
 
 
     return (
