@@ -22,7 +22,6 @@ class UsersApiContainer extends React.Component {
     onPageChange = (currentPage) => {
         this.props.toggleIsFetching(true)
         this.props.setCurrentPage(currentPage)
-
         usersApi.getUsers(this.props.pageSize, currentPage).then(data => {
             this.props.toggleIsFetching(false)
             this.props.setUsers(data.items)

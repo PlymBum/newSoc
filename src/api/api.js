@@ -23,5 +23,17 @@ export let usersApi = {
         return instance.get(`users?count=${pageSize}&page=${currentPage}`).then(response => {
             return response.data
         })
+    },
+    getProfile(userId) {
+        return instance.get(`profile/${userId}`).then(response => {
+            debugger
+            return response.data
+        })
+    },
+    authMe() {
+        return instance.get(`auth/me`)
+            .then(response => {
+                return response.data
+            })
     }
 }
