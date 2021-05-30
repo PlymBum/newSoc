@@ -4,31 +4,29 @@ import {follow, setCurrentPage, setTotalCount, setUsers, toggleIsFetching, unfol
 import axios from "axios";
 import Users from "./Users";
 import Preloader from "../common/Preloader";
+import {usersApi} from "../../api/api";
 
 
 class UsersApiContainer extends React.Component {
     componentDidMount() {
         this.props.toggleIsFetching(true)
-        axios.get(`https://social-network.samuraijs.com/api/1.0/users?count=${this.props.pageSize}&page=${this.props.currentPage}`,{
-            withCredentials:true
-        })
-            .then(response => {
+
+        usersApi.getUsers(this.props.pageSize, this.props.currentPage)
+            .then(data => {
                 this.props.toggleIsFetching(false)
-                this.props.setUsers(response.data.items)
-                this.props.setTotalCount(response.data.totalCount)
+                this.props.setUsers(data.items)
+                this.props.setTotalCount(data.totalCount)
             })
     }
 
     onPageChange = (currentPage) => {
         this.props.toggleIsFetching(true)
         this.props.setCurrentPage(currentPage)
-        axios.get(`https://social-network.samuraijs.com/api/1.0/users?count=${this.props.pageSize}&page=${currentPage}`,{
-            withCredentials:true
+
+        usersApi.getUsers(this.props.pageSize, currentPage).then(data => {
+            this.props.toggleIsFetching(false)
+            this.props.setUsers(data.items)
         })
-            .then(response => {
-                this.props.toggleIsFetching(false)
-                this.props.setUsers(response.data.items)
-            })
     }
 
 

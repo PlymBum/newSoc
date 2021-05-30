@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./Users.module.css";
 import noAvatar from "../../assets/images/noAvatar.png";
 import {NavLink} from "react-router-dom";
-import axios from "axios";
+import {usersApi} from "../../api/api";
 
 
 const Users = (props) => {
@@ -29,35 +29,19 @@ const Users = (props) => {
 
                 {user.followed ?
                     <button onClick={() => {
-                        axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${user.id}`, {
-                            withCredentials: true,
-                            headers: {
-                                'API-KEY': 'f07ae418-3eb4-44c0-8959-1f57cacbd24a'
+                        usersApi.unfollow(user.id).then(resultCode => {
+                            if (resultCode === 0) {
+                                props.unfollow(user.id)
                             }
                         })
-                            .then(response => {
-                                if (response.data.resultCode === 0) {
-                                    props.unfollow(user.id)
-                                }
-                            })
-                    }
-
-                    }
-                    >unfollow</button>
+                    }}>unfollow</button>
                     : <button onClick={() => {
-                        axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${user.id}`, {}, {
-                            withCredentials: true,
-                            headers: {
-                                'API-KEY': 'f07ae418-3eb4-44c0-8959-1f57cacbd24a'
+                        usersApi.follow(user.id).then(resultCode => {
+                            if (resultCode === 0) {
+                                props.follow(user.id)
                             }
                         })
-                            .then(response => {
-                                if (response.data.resultCode === 0) {
-                                    props.follow(user.id)
-                                }
-                            })
-                    }
-                    }>follow</button>}
+                    }}>follow</button>}
 
             </div>
 
