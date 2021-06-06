@@ -1,6 +1,5 @@
 import React from "react";
 import Header from "./Header";
-import axios from "axios";
 import {setAuth, setAuthUserData} from "../../redux/auth-reduser";
 import {connect} from "react-redux";
 import {usersApi} from "../../api/api";
