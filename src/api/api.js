@@ -29,8 +29,11 @@ export let usersApi = {
             debugger
             return response.data
         })
-    },
-    authMe() {
+    }
+}
+
+export let authApi = {
+    me() {
         return instance.get(`auth/me`)
             .then(response => {
                 return response.data

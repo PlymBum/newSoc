@@ -1,3 +1,5 @@
+import {usersApi} from "../api/api";
+
 export const addPostActionCreator = () => ({type: ADD_POST})
 export const updatePostTextActionCreator = (text) => ({type: UPDATE_POST_TEXT, newText: text})
 export const setUsersProfile = (profile) => ({type: SET_USERS_PROFILE, profile})
@@ -5,6 +7,15 @@ export const setUsersProfile = (profile) => ({type: SET_USERS_PROFILE, profile})
 const ADD_POST = "ADD_POST"
 const UPDATE_POST_TEXT = "UPDATE_POST_TEXT"
 const SET_USERS_PROFILE = "SET_USERS_PROFILE"
+
+//thunk
+export const getUserProfile=(userId) =>(dispatch)=>{
+    usersApi.getProfile(userId)
+        .then(data => {
+            dispatch(setUsersProfile(data))
+
+        })
+}
 
 let initialState = {
     posts: [

@@ -1,9 +1,22 @@
-export const setAuthUserData = (id,email,login) => ({type: SET_AUTH_USER_DATA,data:{id,email,login}})
-export const setAuth = (isAuth) => ({type: SET_AUTH,isAuth})
+import {authApi} from "../api/api";
+
+const setAuthUserData = (id,email,login) => ({type: SET_AUTH_USER_DATA,data:{id,email,login}})
+const setAuth = (isAuth) => ({type: SET_AUTH,isAuth})
 
 
 const SET_AUTH_USER_DATA = "SET_AUTH_USER_DATA"
 const SET_AUTH = "SET_AUTH"
+
+
+export const authMe = ()=>(dispatch)=>{
+    authApi.me().then(data => {
+        if (data.resultCode===0){
+            dispatch(setAuth(true))
+            let {id, email, login} = data.data
+            dispatch(setAuthUserData(id, email, login))
+        }
+    })
+}
 
 let initialState = {
     data: {
