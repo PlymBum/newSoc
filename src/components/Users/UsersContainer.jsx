@@ -13,6 +13,8 @@ import {
 import Users from "./Users";
 import Preloader from "../common/Preloader";
 import {Redirect} from "react-router-dom";
+import {compose} from "redux";
+import {WithAuthRedirectComponent} from "../hoc/WithAuthRedirectComponent";
 
 
 class UsersApiContainer extends React.Component {
@@ -27,7 +29,6 @@ class UsersApiContainer extends React.Component {
 
 
     render() {
-        if(!this.props.isAuth) return <Redirect to='/login' />;
         return (
             <>
                 {this.props.isFetching ? <Preloader/> : null}
@@ -40,8 +41,6 @@ class UsersApiContainer extends React.Component {
                        unfollow={this.props.unfollow}
                        followingInProgress={this.props.followingInProgress}
                        toggleIsFollowing={this.props.toggleIsFollowing}
-
-
                 />
 
             </>)
@@ -57,14 +56,19 @@ const mapStateToProps = (state) => {
         currentPage: state.usersPage.currentPage,
         totalCount: state.usersPage.totalCount,
         isFetching: state.usersPage.isFetching,
-        followingInProgress: state.usersPage.followingInProgress,
-        isAuth:state.auth.isAuth
+        followingInProgress: state.usersPage.followingInProgress
     }
 }
 
+export default compose(
+    connect(mapStateToProps, {
+        follow, unfollow, setUsers,
+        setTotalCount, setCurrentPage, toggleIsFetching,
+        toggleIsFollowing, getUsers
+    }),
+    WithAuthRedirectComponent
+)(UsersApiContainer)
 
-export default connect(mapStateToProps, {
-    follow, unfollow, setUsers, setTotalCount, setCurrentPage, toggleIsFetching, toggleIsFollowing, getUsers
-})(UsersApiContainer)
+
 
 

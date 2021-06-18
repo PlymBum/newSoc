@@ -13,7 +13,6 @@ const Dialogs = (props) => {
     let dialogsItem = props.dialogs.map(dialog => <User key={dialog.id} name={dialog.name} id={dialog.id}/>)
     let messagesItem = props.messages.map(message => <Message key={message.id} message={message.message} className={message.className} avatar={message.avatar}/>)
 
-    if(!props.isAuth) return <Redirect to='/login' />;
     return (
         <div className={styles.content}>
             <div className={styles.dialogs}>
