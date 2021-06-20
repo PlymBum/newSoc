@@ -3,10 +3,12 @@ import {usersApi} from "../api/api";
 export const addPostActionCreator = () => ({type: ADD_POST})
 export const updatePostTextActionCreator = (text) => ({type: UPDATE_POST_TEXT, newText: text})
 export const setUsersProfile = (profile) => ({type: SET_USERS_PROFILE, profile})
+export const setUsersStatus = (status) => ({type: SET_USER_STATUS, status})
 
 const ADD_POST = "ADD_POST"
 const UPDATE_POST_TEXT = "UPDATE_POST_TEXT"
 const SET_USERS_PROFILE = "SET_USERS_PROFILE"
+const SET_USER_STATUS = "SET_USER_STATUS"
 
 //thunk
 export const getUserProfile=(userId) =>(dispatch)=>{
@@ -38,6 +40,7 @@ let initialState = {
             avatar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTz0cES6k3m6U56piR3v2i9mm9G9Em0-kLhpg&usqp=CAU"
         }
     ],
+    status:"stat",
     newPostText: '',
     profile: null
 }
@@ -70,6 +73,11 @@ const profileReducer = (state = initialState, action) => {
             return {
 
                 ...state, profile: action.profile
+            }
+        }
+        case SET_USER_STATUS:{
+            return {
+                ...state,status: action.status
             }
         }
 
